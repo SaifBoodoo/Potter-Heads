@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <title> Welcome to the Potterhead Quiz site</title>
+
+  <style>
+    body { 
+      font-family: Ariel;
+      background-color: darkblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+
+    .login-container {
+      background: white;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      width: 300px
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #45a049;
+        }
+
+    .message {
+      text-align: center;
+      margin-top: 10px;
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div class = "login-container">
+        <h2> Please Login </h2>
+        <input type = "text" id = "Username" placeholder = "Username" required />
+        <input type = "password" id = "Password" placeholder = "Password" required />
+        <button onclick = "login()"> Login </button>
+        <div class = "message" id = "message"></div>
+  </div>
+
+  <script>
+        function login() {
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const message = document.getElementById("message");
+
+          const validUsername = "bob";
+          const validPassword = "bobpass";
+
+          if (username === validUsername && password === validPassword) {
+            message.style.color = "darkblue";
+            message.textContent = "Login successful!";
+    
+          } else {
+            message.style.color = "red";
+            message.textContent = "Invalid username or password.";
+          }
+        }
+      </script>
+</body>
+</html>
